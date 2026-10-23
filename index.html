@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diff BD  -  Text diff checker</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <h1>Diff BD</h1>
+    <p class="subtitle" data-i18n="subtitle">Text diff checker</p>
+  </div>
+  <button id="langBtn" class="btn lang" type="button">&#2476;&#2494;&#2434;&#2482;&#2494;</button>
+</header>
+
+<main>
+  <section class="inputs">
+    <div class="pane">
+      <div class="pane-head"><label for="taA" data-i18n="original">Original</label><span id="countA" class="count"></span></div>
+      <textarea id="taA" spellcheck="false" placeholder="Paste the original text here..."></textarea>
+    </div>
+    <div class="pane">
+      <div class="pane-head"><label for="taB" data-i18n="modified">Modified</label><span id="countB" class="count"></span></div>
+      <textarea id="taB" spellcheck="false" placeholder="Paste the modified text here..."></textarea>
+    </div>
+  </section>
+
+  <section class="toolbar">
+    <button id="swapBtn" class="btn" type="button" data-i18n="swap">Swap</button>
+    <button id="clearBtn" class="btn" type="button" data-i18n="clear">Clear</button>
+    <button id="sampleBtn" class="btn" type="button" data-i18n="sample">Load sample</button>
+    <span class="seg" role="group">
+      <button type="button" data-view="inline" data-i18n="viewInline">Inline</button>
+      <button type="button" data-view="side" data-i18n="viewSide">Side by side</button>
+    </span>
+    <button id="copyBtn" class="btn" type="button" data-i18n="copySummary">Copy summary</button>
+    <button id="dlBtn" class="btn primary" type="button" data-i18n="download">Download .diff</button>
+  </section>
+
+  <section id="stats" class="stats" style="display:none">
+    <span id="statAdd" class="s-add"></span>
+    <span id="statDel" class="s-del"></span>
+    <span id="statChg" class="s-chg"></span>
+    <span id="statEq" class="s-eq"></span>
+    <span id="statSim" class="s-sim"></span>
+  </section>
+
+  <div id="emptyState" class="empty"><p></p></div>
+  <section id="output" class="output" aria-live="polite"></section>
+</main>
+
+<footer><p data-i18n="footer">100% offline  -  your text never leaves this device.</p></footer>
+<div id="toast" class="toast"></div>
+
+<script src="js/logic.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #f7f8fa; color: #1c2330; }
+.topbar { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: #12233a; color: #fff; position: sticky; top: 0; z-index: 5; }
+.brand h1 { margin: 0; font-size: 22px; }
+.subtitle { margin: 2px 0 0; font-size: 13px; opacity: .75; }
+main { max-width: 1100px; margin: 0 auto; padding: 16px 16px 40px; }
+.btn { background: #fff; border: 1px solid #c9d2e0; border-radius: 8px; padding: 8px 14px; font-size: 14px; cursor: pointer; color: #1c2330; }
+.btn:hover { background: #eef2f8; }
+.btn.primary { background: #1d6fd1; border-color: #1d6fd1; color: #fff; }
+.btn.primary:hover { background: #185fb4; }
+.btn.lang { background: transparent; color: #fff; border-color: #5b7499; }
+.btn.lang:hover { background: #1d3554; }
+.inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.pane { background: #fff; border: 1px solid #dde3ec; border-radius: 10px; padding: 10px; display: flex; flex-direction: column; }
+.pane-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+.pane-head label { font-weight: 600; font-size: 14px; }
+.count { font-size: 12px; color: #66738a; }
+textarea { width: 100%; min-height: 170px; resize: vertical; font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 13px; line-height: 1.55; border: 1px solid #c9d2e0; border-radius: 8px; padding: 10px; white-space: pre; }
+textarea:focus { outline: 2px solid #1d6fd1; border-color: #1d6fd1; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px; }
+.seg { display: inline-flex; border: 1px solid #c9d2e0; border-radius: 8px; overflow: hidden; background: #fff; }
+.seg button { border: 0; background: transparent; padding: 8px 14px; font-size: 14px; cursor: pointer; color: #1c2330; }
+.seg button.active { background: #12233a; color: #fff; }
+.stats { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; font-size: 14px; font-weight: 600; }
+.stats span { background: #fff; border: 1px solid #dde3ec; border-radius: 8px; padding: 6px 12px; }
+.s-add { color: #0f7a2e; } .s-del { color: #b4232a; } .s-chg { color: #9a6206; } .s-eq { color: #66738a; } .s-sim { color: #12233a; }
+.empty { background: #fff; border: 1px dashed #c9d2e0; border-radius: 10px; padding: 28px; text-align: center; color: #66738a; margin-bottom: 12px; }
+.output { background: #fff; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 13px; line-height: 1.6; }
+.row { display: flex; min-width: 0; border-bottom: 1px solid #f0f3f7; }
+.row:last-child { border-bottom: 0; }
+.gutter { flex: 0 0 48px; text-align: right; padding: 2px 8px; color: #98a2b8; user-select: none; }
+.sign { flex: 0 0 22px; text-align: center; user-select: none; }
+.code { flex: 1; padding: 2px 10px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.row.eq .code { color: #5b6478; }
+.row.del, .cell.del { background: #fdecec; } .row.del .code { color: #8c1d22; }
+.row.add, .cell.add { background: #e8f7ee; } .row.add .code { color: #0d5c26; }
+.row.chg-del, .cell.chg-del { background: #fff4e0; }
+.row.chg-add, .cell.chg-add { background: #eaf4fd; }
+.wd { border-radius: 3px; padding: 0 1px; }
+.wd.in-del { background: #f5c6a8; } .wd.in-add { background: #a9dcf2; }
+.identical { padding: 24px; text-align: center; color: #0f7a2e; font-family: system-ui, sans-serif; font-size: 15px; }
+.side-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.cell { padding: 0; border-bottom: 1px solid #f0f3f7; min-width: 0; display: flex; }
+.cell .code { padding: 2px 10px; }
+.cell.empty { background: #fbfcfe; }
+footer { text-align: center; color: #66738a; font-size: 12px; padding: 18px; }
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #12233a; color: #fff; padding: 10px 18px; border-radius: 8px; font-size: 14px; opacity: 0; pointer-events: none; transition: opacity .2s; }
+.toast.show { opacity: 1; }
+@media (max-width: 700px) {
+  .inputs { grid-template-columns: 1fr; }
+  textarea { min-height: 120px; }
+  .side-grid { grid-template-columns: 1fr 1fr; }
+  .output { overflow-x: auto; }
+  .side-grid { min-width: 560px; }
+}
